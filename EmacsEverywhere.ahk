@@ -62,7 +62,8 @@ is_target() {
     return true
   }
   ; for disable 
-  if (WinActive("ahk_class Console_2_Main") || WinActive("ahk_class PuTTY") || WinActive("ahk_class SunAwtFrame")) { 
+  if (WinActive("ahk_exe Code.exe") || WinActive("ahk_exe WindowsTerminal.exe")) {
+    ;WinActive("ahk_class Console_2_Main") || WinActive("ahk_class PuTTY") || WinActive("ahk_class SunAwtFrame")) { 
     return false
   }
   return true
@@ -505,6 +506,7 @@ $!d::SendCommand("!d","^+{Right}","{Delete}")
 !w::Send {LCtrl Down}{w}{LCtrl Up}  ; emacs kill_ring_save()
 !t::Send {LCtrl Down}{t}{LCtrl Up}
 !c::Send {LCtrl Down}{c}{LCtrl Up}
+!x::Send {LCtrl Down}{x}{LCtrl Up}
 !v::Send {LCtrl Down}{v}{LCtrl Up}
 !l::Send {LCtrl Down}{l}{LCtrl Up}
 !q::Send {LAlt Down}{f4}{LAlt Up}
